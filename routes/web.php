@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'GuestController@index');
+
+Route::get('/logindosen', 'GuestController@logindosen');
+
+Route::get('/loginbiro2', 'GuestController@logindosen');
+
+Route::get('/loginasdos', 'GuestController@logindosen');
