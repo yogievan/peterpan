@@ -12,10 +12,23 @@
 */
 
 
-Route::get('/', 'GuestController@index');
+// Route::get('/', 'GuestController@index');
 
 Route::get('/logindosen', 'GuestController@logindosen');
 
 Route::get('/loginbiro2', 'GuestController@logindosen');
 
 Route::get('/loginasdos', 'GuestController@logindosen');
+
+Route::get('/login', 'GuestController@logindosen');
+
+// setting auth
+Route::middleware(['auth'])->group(function () {
+    // set cek role in auth
+    Route::middleware(['cekrole:asdos'])->group(function () {
+        // excample to direct
+        Route::get('/index', 'GuestController@index');
+    });
+});
+
+

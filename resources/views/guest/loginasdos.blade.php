@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Form Dosen</title>
+    <title>Form Asdos</title>
   </head>
   <body>
     <nav class="navbar navbar-light bg-dark py-2">
@@ -22,18 +22,20 @@
     <main>
         <div class="mt-4 mx-4">
             <div class="container-fluid d-flex justify-content-center mt-5">
-                <form action="" class="w-50 border border-primary p-5">
+                <form action="/login" method="POST" class="w-50 border border-primary p-5"> {{-- add url for action and metode post --}}
+                  @csrf {{-- add csrf for protected--}}
                     <h2 class="mb-4 text-center">Login Asdos</h2>
+                    {{-- can input alert here (optional) --}}
                     <div class="mb-3 row">
                         <label for="username" class="col-sm-2 col-form-label">Username</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="username">
+                          <input type="text" class="form-control" id="username" name="username"> {{-- provide a username input name --}}
                         </div>
                       </div>
                       <div class="mb-3 row">
                         <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-10">
-                          <input type="password" class="form-control" id="inputPassword">
+                          <input type="password" class="form-control" id="inputPassword" name="password"> {{-- provide a password input name--}}
                         </div>
                       </div>
                       <div class="d-flex justify-content-end">
