@@ -14,7 +14,10 @@ class CreateDosenTable extends Migration
     public function up()
     {
         Schema::create('dosen', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->string('username', 40)->primary();
+            $table->string('password', 80);
+            $table->string('namalengkap', 50)->nullable();
+            $table->text('alamat')->nullable();
             $table->timestamps();
         });
     }
